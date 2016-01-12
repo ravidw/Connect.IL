@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connect.IL</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="/includes/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/includes/css/datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/includes/css/styles.css" rel="stylesheet">
+    <link href="/includes/css/bootstrap-stars.css" rel="stylesheet">
+    <link href="/includes/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/includes/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/includes/js/jquery.barrating.min.js"></script>
+    <script type="text/javascript" src="/includes/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/includes/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="/includes/js/app.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a id="home" href="dashboard.html"><span id="logo"></span></a>
+        </nav>
+    </header>
+    <main id="admin">
+        <ol class="breadcrumb">
+            <li class="active">Dashboard</li>
+        </ol>
+        <h2>Admin Dashboard</h2>
+        <section>
+          <h3>Quick Info</h3>
+          <div class="quick-info-box-wrapper quick-info-box-wrapper-first">
+            <div class="quick-info-box">
+              <div class="icon"></div>
+              <div class="list">
+                <b>16 Reminders</b>
+                <ul>
+                  <li>Lorem ipsum</li>
+                  <li>Dolor sit amet</li>
+                  <li>Lorem ipsum </li>
+                </ul>
+              </div>
+              <div class="clear"></div>
+              <div class="more">
+                <a href="#">All Reminders</a>
+              </div>
+            </div>
+          </div>
+          <div class="quick-info-box-wrapper">
+            <div class="quick-info-box">
+              <div class="icon"></div>
+              <div class="list">
+                <b>16 Reminders</b>
+                <ul>
+                  <li>Lorem ipsum</li>
+                  <li>Dolor sit amet</li>
+                  <li>Lorem ipsum</li>
+                </ul>
+              </div>
+              <div class="clear"></div>
+              <div class="more">
+                <a href="#">All Reminders</a>
+              </div>
+            </div>
+          </div>
+          <div class="quick-info-box-wrapper quick-info-box-wrapper-last">
+            <div class="quick-info-box quick-info-box-last">
+              <div class="icon"></div>
+              <div class="list">
+                <b>16 Reminders</b>
+                <ul>
+                  <li>Lorem ipsum</li>
+                  <li>Dolor sit amet</li>
+                  <li>Lorem ipsum</li>
+                </ul>
+              </div>
+              <div class="clear"></div>
+              <div class="more">
+                <a href="#">All Reminders</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Make a New Report</h3>
+          <form id="make-report-form" method="get" action="results.html">
+            <div class="make-report-line">
+              <select name="search-param-1">
+                <option value="option1">option1</option>
+              </select>
+              <select name="search-param-2">
+                <option value="option1">option1</option>
+              </select>
+              <select name="search-param-3">
+                <option value="option1">option1</option>
+              </select>
+              <select name="search-param-4">
+                <option value="option1">option1</option>
+              </select>
+            </div>
+            <div class="make-report-line">
+              <div class="input-daterange" id="search-range">
+                <input id="from-date" class="range" name="from-date" type="text" placeholder="From date">
+                <input id="to-date" class="range" name="to-date" type="text" placeholder="To date">
+              </div>
+              <div class="search-box">
+                <!--<i class="glyphicon glyphicon-search"></i>-->
+                <input name="search-input" type="text" placeholder="Free Text">
+              </div>
+              <input class="btn-search" type="submit" value="Make Report">
+            </div>
+            <div class="make-report-line-last">
+              <a href="#">Advance Options</a>
+            </div>
+          </form>
+        </section>
+        <div class="result">
+          <div class="media bottom-border">
+            <div class="media-left">
+              <img class="media-object" src="includes/images/Pierre.jpg" alt="Pierre">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Pierre</h4>
+              <select class="readonly-rate-bar">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+              <p>
+                <b>When: </b><span class="when-desc">All year.</span><br>
+                <b>Where: </b><span class="where-desc">Paris, France, 20 Avenue Leon Bourgeois.</span><br>
+                <b>Willing to offer: </b><span class="offer-desc">2 nights at my beautiful hotel in the center of the city, for free.</span><br>
+                <b>Willing to receive: </b><span class="receive-desc">Open for suggestions.</span><br>
+              </p>
+            </div>
+            <div class="media-right">
+              <a class="default-btn" href="details.html">View connection</a>
+            </div>
+          </div>
+          <div class="media bottom-border">
+            <div class="media-left">
+              <img class="media-object" src="includes/images/aloysius.jpg" alt="Aloysius">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Aloysius</h4>
+              <select class="readonly-rate-bar">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <p>
+                <b>When: </b><span class="when-desc">From - 01/02/2016, To - 29/02/2016.</span><br>
+                <b>Where: </b><span class="where-desc">Berlin, Germany, Lehrter str. 100.</span><br>
+                <b>Willing to offer: </b><span class="offer-desc">Up to 1 month stay at my awesome 4 rooms luxurious apartment in the center of the city.</span><br>
+                <b>Willing to receive: </b><span class="receive-desc">Learn how to cook Mediterranean food.</span><br>
+              </p>
+            </div>
+            <div class="media-right">
+              <a class="default-btn" href="#">View connection</a>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-left">
+              <img class="media-object" src="includes/images/adelina.jpg" alt="Adelina">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Adelina</h4>
+              <select class="readonly-rate-bar">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <p>
+                <b>When: </b><span class="when-desc">From - 01/02/2016, To - 08/02/2016.</span><br>
+                <b>Where: </b><span class="where-desc">Rome, Italy, Via Antonio Mordini, 5.</span><br>
+                <b>Willing to offer: </b><span class="offer-desc">Free tour over the city + room for 1 night sleep.</span><br>
+                <b>Willing to receive: </b><span class="receive-desc">Learn about the Israeli culture.</span><br>
+              </p>
+            </div>
+            <div class="media-right">
+              <a class="default-btn" href="#">View connection</a>
+            </div>
+          </div>
+        </div>
+</main>
+    <footer>
+        <nav class="bottom-nav">
+            <ul>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Term of use</a>
+                </li>
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Support</a>
+                </li>
+                <li>
+                    <a href="#">Site map</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright">All Rights Reserved &copy; Connect.IL, 2016</div>
+    </footer>
+</body>
+</html>
