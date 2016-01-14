@@ -4,6 +4,9 @@ html, body{height: 100%;}
 body{background-color: #ebebeb;}
 a:hover, a:focus{text-decoration: none;cursor: pointer;}
 h1 {font-weight: bold;}
+h2 {font-weight: bold;}
+h3 {font-weight: bold;}
+h4 {font-weight: bold; margin: 30px 0 15px;}
 .clear {clear: both;}
 #main-image{
     height: 500px;
@@ -219,86 +222,23 @@ ul.connect-options li a img {
 .pt-page-current, .jgallery-container{background-color: #ebebeb !important;}
 .jgallery .jgallery-thumbnails.images img{padding: 1px 10px !important; border: none !important;}
 
-/*Admin*/
-#admin { 
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.login-box {
-  width: 350px;
-  background-color: #c0c0c0;
-  margin: 90px auto;
-  padding: 20px;
-}
-.login-box input {
-  height: 40px;
+table {
   width: 100%;
-  border: 1px solid darkgrey;
-  border-radius: 0 !important;
-  margin-bottom: 15px;
-  padding: 0 10px;
+  border: 0;
 }
-.login-box input[type="submit"] {
+table td, table th {
+  padding: 7px 10px;
   text-align: center;
 }
-
-.quick-info-box-wrapper {
-  width: 33%;
-  padding: 0 20px;
-  display: inline-block;
+table thead tr {
+  background-color: #ccc;
 }
-.quick-info-box-wrapper-first { padding-left: 0; }
-.quick-info-box-wrapper-last { padding-right: 0; }
-.quick-info-box {
-  width: 100%;
-  background-color: #e0e0e0;
-  padding: 10px;
-  display: inline-block;
+table tbody tr {
+  background-color: #fff;
 }
-.quick-info-box .icon {
-  width: 80px;
-  height: 80px;
-  background-color: #e0e0e0;
-  display: inline-block;
-  background-image: url('../images/icon1.png');
+table tbody tr.alt {
+  background-color: #ececec;
 }
-.quick-info-box .list {
-  display: inline-block;
+table tbody tr:hover {
+  background-color: #ccc;
 }
-.quick-info-box .list ul {
-  padding-left: 20px;
-}
-.quick-info-box .more {
-  display: inline-block;
-  text-align: right;
-  width: 100%;
-}
-
-/*Search-bar*/
-.make-report-line {
-    width: 100%;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-.make-report-line-last {
-    width: 100%;
-    margin-bottom: 40px;
-    display: inline-block;
-    text-align: right;
-}
-.make-report-line input, .make-report-line select {
-  height: 40px;
-  float: left;
-  border: 1px solid darkgrey;
-  border-radius: 0 !important;
-  position: relative;
-}
-.make-report-line select {
-    width: 25%;
-}
-.make-report-line .search-box input{width: calc(70% - 120px); padding: 0 10px 0 10px;}
-.make-report-line .input-daterange input{width: 15%;}
-.make-report-line .input-daterange input{width: 15%;}
-.make-report-line .btn-search{width: 120px;}
-.make-report-line .invalid-input{border: 2px solid red !important;}
