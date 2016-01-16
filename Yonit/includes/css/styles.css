@@ -15,7 +15,7 @@ h4 {font-weight: bold; margin: 30px 0 15px;}
     transition: background 1s linear;
     position: relative;
 }
-#logo{
+.logo{
     background-image: url('../images/Connect.IL-Logo.png');
     height: 100px;
     position: absolute;
@@ -83,7 +83,7 @@ nav a:hover{ color: #f2f2f2;}
     height: 78px;
     position: absolute;
     left: 0;
-    background-color: rgba(128, 128, 128, 0.95);
+    background-color: rgba(128, 128, 128, 0.8);
     width: 100%;
     padding: 0 15%;
 }
@@ -182,13 +182,82 @@ main{padding: 0 15%;min-height:calc(100% - 209px);}
 }
 
 /*Footer*/
-footer{height: 89px; background-color: #A0A0A0;}
+footer{background-color: #A0A0A0;}
 .copyright{text-align: center;}
+
+/*Media*/
+@media (max-width: 768px){
+    nav li {display: block;}
+    nav ul {background: rgba(160, 160, 160, 0.95);}
+    .top-nav {background-color: rgba(160, 160, 160, 0.95); z-index:10}
+    .top-nav a:not(#home){border: none; font-weight: 600;}
+    .navbar-header{text-align: center;}
+    nav a, nav a:focus{padding: 0 20px 0 0;}
+
+    .search-bar{height: 158px !important;}
+    .search-box input{width: 100% !important;}
+    .input-daterange input{width: 50% !important;}
+    .search-bar select{width: calc(50% - 50px) !important;}
+    #results{padding-top: 159px;}
+
+    #tag-line{width: 100%; margin: 0;}
+    #main-image{height: 310px; background-size: 100% 310px;}
+
+    .media-left{float:left;}
+    .media-body{clear: both; width: 100%; display: block !important;}
+    .media-right{float:right;}
+
+    .div-how-works img{display: none;}
+    .explanation{float: none; width: auto;}
+}
+
+@media (max-width: 825px){
+    .top-nav {height: 50px;}
+    .top-nav ul{line-height: 50px;}
+    .logo{
+        height: 50px;
+        position: absolute;
+        width: 175px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 1175px){
+    .top-nav {padding: 0;}
+    .search-bar{height: 118px;}
+    .search-box input{width: calc(100% - 200px);}
+    .input-daterange input{width: 100px;}
+    .search-bar select{width: calc(50% - 50px);}
+    #results{padding-top: 118px;}
+}
+
+@media (max-width: 1335px){
+    .top-nav ul{font-size: 14px;}
+}
+
+@media (max-width: 1450px){
+    .div-how-works{ width: 546px;}
+    .div-how-works .arrow-left, .div-how-works .arrow-right{display: none;}
+    .div-how-works .globe-israel{margin-right: 20px;}
+    .div-how-works .globe-world{margin-left: 20px;}
+}
 
 /*Bootstrap overrides*/
 .thumbnail{border-radius: 0;}
 .media-left{padding-right: 43px;}
 .media-heading{display: inline-block;}
+.navbar{margin: 0 !important;}
+.navbar-default{border: none !important;}
+.navbar-default .navbar-toggle{border: none !important; float: right;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{background: none !important;}
+.navbar-default .navbar-toggle:hover span{background-color: #f2f2f2 !important;}
+.navbar-collapse{padding-right: 0!important;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{border:none;}
+
+@media (min-width: 768px){
+    .navbar {border-radius: 0 !important;}
+}
 
 /*Barrating override*/
 .br-wrapper{

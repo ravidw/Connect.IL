@@ -1,3 +1,7 @@
+<?php
+    include 'sqlConnect.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,19 +23,32 @@
 </head>
 <body>
     <header>
-        <nav class="top-nav">
-            <a id="home" href="index.html"><span id="logo"></span></a>
-            <ul>
-                <li class="nav-link">
-                    <a href="index.html#suggested">Suggested Connections</a>
-                </li>
-                <li class="nav-link">
-                    <a href="index.html#connect-us">Connect With Us</a>
-                </li>
-                <li>
-                    <a href="#" class="btn-sign-in">Sign in</a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-default top-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="home" class="logo" href="#"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="nav-collapse">
+                    <ul>
+                        <li class="nav-link">
+                            <a href="index.html#suggested">Suggested Connections</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="index.html#connect-us">Connect With Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-sign-in">Sign in</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
         <div class="search-bar">
             <form id="search-form" method="get" action="results.html">

@@ -19,26 +19,40 @@
 </head>
 <body>
     <header id="main-image">
-        <nav class="top-nav">
-            <a id="home" href="#"><span id="logo"></span></a>
-            <ul>
-                <li class="nav-link">
-                    <a href="#suggested">Suggested Connections</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#how-it-works">What is Connect.IL</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#connect-us">Connect With Us</a>
-                </li>
-                <li>
-                    <a href="#" class="btn-sign-in">Sign in</a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-default top-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="home" class="logo" href="#"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="nav-collapse">
+                    <ul>
+                        <li class="nav-link">
+                            <a href="#suggested">Suggested Connections</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#how-it-works">What is Connect.IL</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#connect-us">Connect With Us</a>
+                        </li>
+                        <li class="li-login">
+                            <a href="#" class="btn-sign-in">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+
         <div id="tag-line">Connecting Israel to the World, and the World to Israel</div>
         <div class="search-bar">
-            <form id="search-form" method="get" action="results.html">
+            <form id="search-form" method="get" action="php/results.php">
                 <div class="search-box">
                     <i class="glyphicon glyphicon-search"></i>
                     <input name="search-input" type="text" placeholder="Search">
