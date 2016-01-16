@@ -125,9 +125,7 @@
                     echo '</div>';
                 }
             ?>
-            <?php
-                mysqli_free_result($result);
-            ?>
+            <?php mysqli_free_result($result); ?>
     </main>
     <footer>
         <nav class="bottom-nav">

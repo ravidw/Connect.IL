@@ -151,36 +151,36 @@ main{padding: 0 15%;min-height:calc(100% - 209px);}
 /*Details*/
 #details section{margin-bottom: 30px;}
 .host-image {
-  width: 175px;
-  display: inline-block;
-  vertical-align: top;
+    width: 175px;
+    display: inline-block;
+    vertical-align: top;
 }
 .host-text {
-  width: calc(100% - 185px);
-  display: inline-block;
-  vertical-align: top;
-  line-height: 22px;
+    width: calc(100% - 185px);
+    display: inline-block;
+    vertical-align: top;
+    line-height: 22px;
 }
 .connect-button {
-  width: 100%;
-  display: inline-block;
-  padding: 45px 0;
-  text-align: center;
+    width: 100%;
+    display: inline-block;
+    padding: 45px 0;
+    text-align: center;
 }
 .left-details {
-  display: inline-block;
-  width: 50%;
-  margin-right: 20px;
-  vertical-align: top;
-  /*float: left;
-  width: 500px;*/
+    /*display: inline-block;*/
+    width: 50%;
+    margin-right: 20px;
+    vertical-align: top;
+    float: left;
+    /*width: 500px;*/
 }
 .right-details {
-  display: inline-block;
-  width: calc(50% - 25px);
-  vertical-align: top;
-    /*float: right;
-    width: calc(90% - 500px);*/
+    /*display: inline-block;*/
+    width: calc(50% - 25px);
+    vertical-align: top;
+    float: right;
+    /*width: calc(90% - 500px);*/
 }
 .get-connected{
     /*left: calc(50% - 90px);

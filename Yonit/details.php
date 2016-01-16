@@ -13,15 +13,24 @@
     $NUM = htmlspecialchars($_GET["offer_num"]);
 
     $query = "SELECT o.*, u.*".
-    " FROM tbl16_offers_225 o".
-    " INNER JOIN tbl16_users_225 u".
-    " ON o.ID = u.ID".
-    " WHERE o.ID = ".$ID.
-    " AND o.offer_num = ".$NUM;
+             " FROM tbl16_offers_225 o".
+             " INNER JOIN tbl16_users_225 u".
+             " ON o.ID = u.ID".
+             " WHERE o.ID = ".$ID.
+             " AND o.offer_num = ".$NUM;
     $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($result);
     if(!$result){
         die("DB query failed.");
     }
+
+    $query2 = "SELECT i.*, u.*".
+              " FROM tbl16_images_225 i".
+              " INNER JOIN tbl16_users_225 u".
+              " ON i.ID = u.ID".
+              " WHERE u.ID = ".$ID;
+
+    $result2 = mysqli_query($connection, $query2);
 ?>
 
 <!DOCTYPE html>
@@ -82,10 +91,10 @@
         <ol class="breadcrumb">
             <li><a href="index.php">Home</a></li>
             <li><a href="#" onclick="window.history.back()">Search results</a></li>
-            <li class="active"><?php ?></li>
+            <li class="active"><?php echo $row[first_name].' '.$row[last_name] ?></li>
         </ol>
         <h2>
-            Connect Pierre Curie
+            Connect <?php echo $row[first_name].' '.$row[last_name] ?>
 
             <select class="readonly-rate-bar">
                 <option value="1">1</option>
@@ -95,57 +104,140 @@
                 <option value="5" selected>5</option>
             </select>
         </h2>
-        <section class="left-details">
-            <div id="gallery">
-                <a href="includes/images/hotel-big.jpg"><img src="includes/images/hotel-big.jpg" alt="The magnificent view from the hotel"></a>
-                <a href="includes/images/hotel2-big.jpg"><img src="includes/images/hotel2-big.jpg" alt="One of many luxurious rooms"></a>
-                <a href="includes/images/hotel3-big.jpg"><img src="includes/images/hotel3-big.jpg" alt="Warm welcoming"></a>
-            </div>
-            <div id="googleMap"></div>
-        </section>
-        <section class="right-details">
-            <div class="info">
+         <section>
+              <div class="host-image">
+                <img class="media-object" src="<?php echo $row[avatar] ?>" alt="Pierre Curie">
+              </div>
+              <div class="host-text">
                 <p>
-                    <b>When: </b><span class="when-desc">All year.</span><br>
-                    <b>Where: </b><span class="where-desc">Paris, France, 20 Avenue Leon Bourgeois.</span><br>
-                    <b>Willing to offer: </b><span class="offer-desc">2 nights at my beautiful hotel in the center of the city, for free.</span><br>
-                    <b>Willing to receive: </b><span class="receive-desc">Open for suggestions.</span><br>
+                  <b>What in this offer? </b><?php echo $row[title] ?><br>
+                  <b>When? </b><?php echo $row[from]. ' - '.$row[to] ?><br>
+                  <b>Where? </b><?php echo $row[location] ?><br>
+                  <b>What do I want to receive in return? </b><?php echo $row[looking_for] ?><br>
                 </p>
                 <p>
-                    <b>About me: </b>My name is Pier, I am a hotel owner. I love Israelis and want them to visit my hotel.
-                    In my free time i'm playing the piano and taking pictures of the beautiful birds of France.
+                  <b>Few more thing's i'd like you to know about my offer:</b>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec,
+                  mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
                 </p>
                 <p>
-                    <b>More info: </b>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec,
-                    mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
+                  <b>A little bit about myself:</b><br>
+                  <?php echo $row[description] ?>
                 </p>
-                <a class="default-btn get-connected" href="#">Get Connected</a>
-            </div>
-            <div class="reviews">
-                <h3>Top comments</h3>
-                <div class="media">
-                    <div class="media-left">
+              </div>
+              <div class="clear"></div>
+              <div class="connect-button">
+                <a class="default-btn get-connected" href="#">Connect With Me!</a>
+              </div>
+            </section>
+            <section>
+              <div class="left-details">
+                <div id="gallery">
+                    <?php
+                        while($image = mysqli_fetch_assoc($result2)){
+                            echo '<a href="'.$image[source].'"><img src="'.$image[source].'" alt="'.$image[alt].'"></a>';
+                        }
+                    ?>
+                </div>
+              </div>
+              <div class="right-details">
+                <div id="googleMap"></div>
+              </div>
+            </section>
+            <section>
+              <div class="left-details">
+                <div id="gallery">
+                  <div class="reviews">
+                    <h4>Top Comments about Pierre Curie:</h4>
+                    <div class="media media2">
+                      <div class="media-left">
                         <img class="media-object" src="includes/images/billie-jean.jpeg" alt="Billie Jean">
-                    </div>
-                    <div class="media-body">
+                      </div>
+                      <div class="media-body">
                         <h4 class="media-heading">Billie Jean</h4>
                         <select class="readonly-rate-bar">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5" selected>5</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5" selected>5</option>
                         </select>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu
-                            pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu
+                          pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
                         </p>
+                      </div>
                     </div>
+                    <div class="media media2">
+                      <div class="media-left">
+                        <img class="media-object" src="includes/images/billie-jean.jpeg" alt="Billie Jean">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">Billie Jean</h4>
+                        <select class="readonly-rate-bar">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5" selected>5</option>
+                        </select>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu
+                          pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
+                        </p>
+                      </div>
+                    </div>
+                    <a class="default-btn more-comments" href="#">More comments</a>
+                  </div>
                 </div>
-                <a class="default-btn more-comments" href="#">More comments</a>
-            </div>
-        </section>
+              </div>
+              <div class="right-details">
+                <div class="reviews">
+                  <h4>More offers from Pierre Curie:</h4>
+                  <div class="media media3 media3-first">
+                    <div class="media-left">
+                      <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
+                    </div>
+                    <div class="media-body">
+                      <p>
+                        <b>What?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
+                        <b>When?</b> All year.<br>
+                        <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
+                        <a class="see-this-offer">See this offer</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="media media3">
+                    <div class="media-left">
+                      <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
+                    </div>
+                    <div class="media-body">
+                      <p>
+                        <b>What?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
+                        <b>When?</b> All year.<br>
+                        <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
+                        <a class="see-this-offer">See this offer</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="media media3">
+                    <div class="media-left">
+                      <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
+                    </div>
+                    <div class="media-body">
+                      <p>
+                        <b>What?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
+                        <b>When?</b> All year.<br>
+                        <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
+                        <a class="see-this-offer">See this offer</a>
+                      </p>
+                    </div>
+                  </div>
+                  <a class="default-btn more-comments" href="#">View all my offers</a>
+                </div>
+              </div>
+            </section>
+        <?php mysqli_free_result($result); ?>
     </main>
     <footer class="clear">
         <nav class="bottom-nav">
