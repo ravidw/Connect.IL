@@ -1,3 +1,29 @@
+<?php
+    $dbhost = "182.50.131.14";
+    $dbuser = "mtastudDB1";
+    $dbpass = "mtastudDB1!";
+    $dbname = "mtastudDB1";
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    if(mysqli_connect_errno()) {
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")");
+    }
+
+    $ID =  htmlspecialchars($_GET["ID"]);
+    $NUM = htmlspecialchars($_GET["offer_num"]);
+
+    $query = "SELECT o.*, u.*".
+    " FROM tbl16_offers_225 o".
+    " INNER JOIN tbl16_users_225 u".
+    " ON o.ID = u.ID".
+    " WHERE o.ID = ".$ID.
+    " AND o.offer_num = ".$NUM;
+    $result = mysqli_query($connection, $query);
+    if(!$result){
+        die("DB query failed.");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,10 +82,11 @@
         <ol class="breadcrumb">
             <li><a href="index.php">Home</a></li>
             <li><a href="#" onclick="window.history.back()">Search results</a></li>
-            <li class="active">Pierre Curie</li>
+            <li class="active"><?php ?></li>
         </ol>
         <h2>
             Connect Pierre Curie
+
             <select class="readonly-rate-bar">
                 <option value="1">1</option>
                 <option value="2">2</option>
