@@ -1,5 +1,19 @@
 <?php
-    include 'sqlConnect.php'
+    $dbhost = "182.50.131.14";
+    $dbuser = "mtastudDB1";
+    $dbpass = "mtastudDB1!";
+    $dbname = "mtastudDB1";
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    if(mysqli_connect_errno()) {
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")");
+    }
+
+    $query = "SELECT o.*, u.* FROM tbl16_offers_225 o INNER JOIN tbl16_users_225 u ON o.ID = u.ID";
+    $result = mysqli_query($connection, $query);
+    if(!$result){
+        die("DB query failed.");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -10,16 +24,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect.IL</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="includes/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="includes/css/datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link href="includes/css/styles.css" rel="stylesheet">
-    <link href="includes/css/bootstrap-stars.css" rel="stylesheet">
-    <link href="includes/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript" src="includes/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="includes/js/jquery.barrating.min.js"></script>
-    <script type="text/javascript" src="includes/js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="includes/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="includes/js/app.js"></script>
+    <link href="../includes/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../includes/css/datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="../includes/css/styles.css" rel="stylesheet">
+    <link href="../includes/css/bootstrap-stars.css" rel="stylesheet">
+    <link href="../includes/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../includes/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../includes/js/jquery.barrating.min.js"></script>
+    <script type="text/javascript" src="../includes/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../includes/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="../includes/js/app.js"></script>
 </head>
 <body>
     <header>
@@ -32,7 +46,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="home" class="logo" href="#"></a>
+                    <a id="home" class="logo" href="../index.php"></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="nav-collapse">
@@ -79,79 +93,37 @@
             <h2><b>Search Results </b>(found <span id="num-of-results">3</span> results)</h2>
         </section>
         <div class="result">
-            <div class="media bottom-border">
-                <div class="media-left">
-                    <img class="media-object" src="includes/images/Pierre.jpg" alt="Pierre">
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Pierre</h4>
-                    <select class="readonly-rate-bar">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5" selected>5</option>
-                    </select>
-                    <p>
-                        <b>When: </b><span class="when-desc">All year.</span><br>
-                        <b>Where: </b><span class="where-desc">Paris, France, 20 Avenue Leon Bourgeois.</span><br>
-                        <b>Willing to offer: </b><span class="offer-desc">2 nights at my beautiful hotel in the center of the city, for free.</span><br>
-                        <b>Willing to receive: </b><span class="receive-desc">Open for suggestions.</span><br>
-                    </p>
-                </div>
-                <div class="media-right">
-                    <a class="default-btn" href="details.html">View connection</a>
-                </div>
-            </div>
-            <div class="media bottom-border">
-                <div class="media-left">
-                    <img class="media-object" src="includes/images/aloysius.jpg" alt="Aloysius">
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Aloysius</h4>
-                    <select class="readonly-rate-bar">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3" selected>3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <p>
-                        <b>When: </b><span class="when-desc">From - 01/02/2016, To - 29/02/2016.</span><br>
-                        <b>Where: </b><span class="where-desc">Berlin, Germany, Lehrter str. 100.</span><br>
-                        <b>Willing to offer: </b><span class="offer-desc">Up to 1 month stay at my awesome 4 rooms luxurious apartment in the center of the city.</span><br>
-                        <b>Willing to receive: </b><span class="receive-desc">Learn how to cook Mediterranean food.</span><br>
-                    </p>
-                </div>
-                <div class="media-right">
-                    <a class="default-btn" href="#">View connection</a>
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left">
-                    <img class="media-object" src="includes/images/adelina.jpg" alt="Adelina">
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Adelina</h4>
-                    <select class="readonly-rate-bar">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3" selected>3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <p>
-                        <b>When: </b><span class="when-desc">From - 01/02/2016, To - 08/02/2016.</span><br>
-                        <b>Where: </b><span class="where-desc">Rome, Italy, Via Antonio Mordini, 5.</span><br>
-                        <b>Willing to offer: </b><span class="offer-desc">Free tour over the city + room for 1 night sleep.</span><br>
-                        <b>Willing to receive: </b><span class="receive-desc">Learn about the Israeli culture.</span><br>
-                    </p>
-                </div>
-                <div class="media-right">
-                    <a class="default-btn" href="#">View connection</a>
-                </div>
-            </div>
-        </div>
+            <?php
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '<div class="media bottom-border">';
+                    echo '<div class="media-left">';
+                    echo '<img class="media-object" src="../includes/images/Pierre.jpg" alt="Pierre">';
+                    echo '</div>';
+                    echo '<div class="media-body">';
+                    echo '<h4 class="media-heading">'.$row[first_name].'</h4>';
+                    echo '<select class="readonly-rate-bar">';
+                    echo '<option value="1">1</option>';
+                    echo '<option value="2">2</option>';
+                    echo '<option value="3">3</option>';
+                    echo '<option value="4">4</option>';
+                    echo '<option value="5" selected>5</option>';
+                    echo '</select>';
+                    echo '<p>';
+                    echo '<b>When: </b><span class="when-desc">'.$row[from].' - '.$row[to].'</span><br>';
+                    echo '<b>Where: </b><span class="where-desc">'.$row[location].'</span><br>';
+                    echo '<b>Willing to offer: </b><span class="offer-desc">'.$row[title].'</span><br>';
+                    echo '<b>Willing to receive: </b><span class="receive-desc">'.$row[looking_for].'</span><br>';
+                    echo '</p>';
+                    echo '</div>';
+                    echo '<div class="media-right">';
+                    echo '<a class="default-btn" href="details.html">View connection</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            ?>
+            <?php
+                mysqli_free_result($result);
+            ?>
     </main>
     <footer>
         <nav class="bottom-nav">
