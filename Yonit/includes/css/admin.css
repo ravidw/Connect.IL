@@ -128,3 +128,10 @@ div.make-report {
   vertical-align: top;
 }
 
+.offer-controlers {
+  width: 100%;
+  display: inline-block;
+}
+.offer-controlers a {
+  margin-right: 10px;
+}
