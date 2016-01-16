@@ -16,7 +16,7 @@ $(document).ready(function() {
             "transitionCols": "1",
             "transitionRows": "1",
             "height": "450px",
-            "width": "500px",
+            "width": "100%",
             "thumbHeight": 50,
             "title": true,
             "thumbnailsPosition": "bottom",
