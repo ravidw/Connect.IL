@@ -159,6 +159,7 @@ main{padding: 0 15%;min-height:calc(100% - 209px);}
   width: calc(100% - 185px);
   display: inline-block;
   vertical-align: top;
+  line-height: 22px;
 }
 .connect-button {
   width: 100%;
