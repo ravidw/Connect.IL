@@ -58,7 +58,8 @@
                             <a href="index.php#connect-us">Connect With Us</a>
                         </li>
                         <li>
-                            <a href="#" class="btn-sign-in">Sign in</a>
+                            <a href="#" class="btn-sign-in" data-toggle="modal" data-target="#loginModal">Login</a>
+                            <?php include 'loginModal.html' ?>
                         </li>
                     </ul>
                 </div>

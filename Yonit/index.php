@@ -43,13 +43,13 @@
                             <a href="#connect-us">Connect With Us</a>
                         </li>
                         <li class="li-login">
-                            <a href="#" class="btn-sign-in">Login</a>
+                            <a href="#" class="btn-sign-in" data-toggle="modal" data-target="#loginModal">Login</a>
+                            <?php include 'loginModal.html' ?>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
         <div id="tag-line">Connecting Israel to the World, and the World to Israel</div>
         <div class="search-bar">
             <form id="search-form" method="get" action="results.php">

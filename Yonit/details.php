@@ -80,7 +80,8 @@
                             <a href="index.php#connect-us">Connect With Us</a>
                         </li>
                         <li>
-                            <a href="#" class="btn-sign-in">Sign in</a>
+                            <a href="#" class="btn-sign-in" data-toggle="modal" data-target="#loginModal">Login</a>
+                            <?php include 'loginModal.html' ?>
                         </li>
                     </ul>
                 </div>
@@ -134,6 +135,9 @@
               <div class="left-details">
                 <div id="gallery">
                     <?php
+                        if(mysqli_fetch_assoc($result2)->lengths == 0){
+                            echo '<a href="includes/images/image-ph"><img src="includes/images/image-ph" alt="No images :("></a>';
+                        }
                         while($image = mysqli_fetch_assoc($result2)){
                             echo '<a href="'.$image[source].'"><img src="'.$image[source].'" alt="'.$image[alt].'"></a>';
                         }
@@ -148,7 +152,7 @@
               <div class="left-details">
                 <div id="gallery">
                   <div class="reviews">
-                    <h4>Top Comments about Pierre Curie:</h4>
+                    <h4>Top Comments about <?php echo $row[first_name].' '.$row[last_name] ?>:</h4>
                     <div class="media media2">
                       <div class="media-left">
                         <img class="media-object" src="includes/images/billie-jean.jpeg" alt="Billie Jean">
@@ -193,7 +197,7 @@
               </div>
               <div class="right-details">
                 <div class="reviews">
-                  <h4>More offers from Pierre Curie:</h4>
+                  <h4>More offers from <?php echo $row[first_name].' '.$row[last_name] ?>:</h4>
                   <div class="media media3 media3-first">
                     <div class="media-left">
                       <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
