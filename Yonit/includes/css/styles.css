@@ -108,7 +108,6 @@ nav a:hover{ color: #f2f2f2;}
 
 /*Main*/
 main{padding: 0 15%;min-height:calc(100% - 209px);}
-#results{padding-top:78px;}
 .breadcrumb{background-color: transparent;}
 #main-home section{margin-top: 50px; padding-bottom: 20px;}
 .bottom-border{border-bottom: 2px solid gray;}
@@ -133,6 +132,7 @@ main{padding: 0 15%;min-height:calc(100% - 209px);}
 }
 
 /*Search results*/
+#results{padding-top:78px; min-height: calc(100% - 185px);}
 .media-object{height: 138px; width: 133px;}
 .media-body p{font-size: 14px;}
 .media-right{
