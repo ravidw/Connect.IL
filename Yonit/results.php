@@ -109,14 +109,18 @@
                     echo '<option value="5" selected>5</option>';
                     echo '</select>';
                     echo '<p>';
-                    echo '<b>When: </b><span class="when-desc">'.$row[from].' - '.$row[to].'</span><br>';
+
+                    $from = substr($row[from], 0, 10);
+                    $to = substr($row[to], 0, 10);
+
+                    echo '<b>When: </b><span class="when-desc">'.$from.' - '.$to.'</span><br>';
                     echo '<b>Where: </b><span class="where-desc">'.$row[location].'</span><br>';
                     echo '<b>Willing to offer: </b><span class="offer-desc">'.$row[title].'</span><br>';
                     echo '<b>Willing to receive: </b><span class="receive-desc">'.$row[looking_for].'</span><br>';
                     echo '</p>';
                     echo '</div>';
                     echo '<div class="media-right">';
-                    echo '<a class="default-btn" href="details.php">View connection</a>';
+                    echo '<a class="default-btn" href="details.php?ID='.$row[ID].'&offer_num='.$row[offer_num].'">View connection</a>';
                     echo '</div>';
                     echo '</div>';
                 }

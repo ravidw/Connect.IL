@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $('#results .media:last-child').removeClass('bottom-border');
+
     $('.btn-search').click(function(){
         var input = $('.search-box input');
         var form = $('#search-form');
