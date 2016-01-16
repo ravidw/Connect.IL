@@ -3,8 +3,8 @@
 html, body{height: 100%;}
 body{background-color: #ebebeb;}
 a:hover, a:focus{text-decoration: none;cursor: pointer;}
-h1 {font-weight: bold;}
-h2 {font-weight: bold;}
+h1 {font-weight: bold; margin: 20px 0 40px;}
+h2 {font-weight: bold; margin: 20px 0 40px;}
 h3 {font-weight: bold;}
 h4 {font-weight: bold; margin: 30px 0 15px;}
 .clear {clear: both;}
@@ -34,9 +34,8 @@ h4 {font-weight: bold; margin: 30px 0 15px;}
 }
 .clear{clear:both;}
 #googleMap{
-    width:500px;
-    height:380px;
-    margin-top: 50px;
+    width:100%;
+    height:450px;
 }
 .default-btn{
     font-size: 16px;
@@ -143,30 +142,60 @@ main{padding: 0 15%;min-height:calc(100% - 209px);}
     text-align: right;
 }
 .media{padding: 50px 0;}
+.media2{padding: 25px 0;}
+.media3{padding: 10px 0 0 0;}
+.media3-first{padding-top: 25px;}
+.media-offer img {height: 90px; width: 90px;}
+.see-this-offer {padding-top: 10px; display: inline-block;}
 
 /*Details*/
 #details section{margin-bottom: 30px;}
-.left-details{float: left; width: 500px;}
-.right-details{
-    float: right;
-    width: calc(90% - 500px);
+.host-image {
+  width: 175px;
+  display: inline-block;
+  vertical-align: top;
+}
+.host-text {
+  width: calc(100% - 185px);
+  display: inline-block;
+  vertical-align: top;
+}
+.connect-button {
+  width: 100%;
+  display: inline-block;
+  padding: 45px 0;
+  text-align: center;
+}
+.left-details {
+  display: inline-block;
+  width: 50%;
+  margin-right: 20px;
+  vertical-align: top;
+  /*float: left;
+  width: 500px;*/
+}
+.right-details {
+  display: inline-block;
+  width: calc(50% - 25px);
+  vertical-align: top;
+    /*float: right;
+    width: calc(90% - 500px);*/
 }
 .get-connected{
-    left: calc(50% - 90px);
+    /*left: calc(50% - 90px);
     bottom: 0;
-    position: absolute;
-    padding: 10px 28px;
-    font-size: 18px;
+    position: absolute;*/
+    padding: 15px 30px;
+    font-size: 24px;
     background-color: #31A199;
     color: #333333;
-    min-width: 181px;
 }
-.info{
+/*.info{
     min-height: 450px;
     position:relative;
     padding-bottom: 60px;
 }
-.info p{margin-bottom: 30px;}
+.info p{margin-bottom: 30px;}*/
 .reviews{
     margin-top: 50px;
     position: relative;
@@ -245,7 +274,7 @@ footer{background-color: #A0A0A0;}
 
 /*Bootstrap overrides*/
 .thumbnail{border-radius: 0;}
-.media-left{padding-right: 43px;}
+.media-left{padding-right: 20px;}
 .media-heading{display: inline-block;}
 .navbar{margin: 0 !important;}
 .navbar-default{border: none !important;}
