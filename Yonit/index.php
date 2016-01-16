@@ -52,7 +52,7 @@
 
         <div id="tag-line">Connecting Israel to the World, and the World to Israel</div>
         <div class="search-bar">
-            <form id="search-form" method="get" action="partials/results.php">
+            <form id="search-form" method="get" action="results.php">
                 <div class="search-box">
                     <i class="glyphicon glyphicon-search"></i>
                     <input name="search-input" type="text" placeholder="Search">

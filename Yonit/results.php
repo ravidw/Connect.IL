@@ -24,16 +24,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect.IL</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="../includes/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="../includes/css/datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link href="../includes/css/styles.css" rel="stylesheet">
-    <link href="../includes/css/bootstrap-stars.css" rel="stylesheet">
-    <link href="../includes/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript" src="../includes/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="../includes/js/jquery.barrating.min.js"></script>
-    <script type="text/javascript" src="../includes/js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../includes/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="../includes/js/app.js"></script>
+    <link href="includes/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="includes/css/datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="includes/css/styles.css" rel="stylesheet">
+    <link href="includes/css/bootstrap-stars.css" rel="stylesheet">
+    <link href="includes/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="includes/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.barrating.min.js"></script>
+    <script type="text/javascript" src="includes/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="includes/js/app.js"></script>
 </head>
 <body>
     <header>
@@ -46,16 +46,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="home" class="logo" href="../index.php"></a>
+                    <a id="home" class="logo" href="index.php"></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="nav-collapse">
                     <ul>
                         <li class="nav-link">
-                            <a href="index.html#suggested">Suggested Connections</a>
+                            <a href="index.php#suggested">Suggested Connections</a>
                         </li>
                         <li class="nav-link">
-                            <a href="index.html#connect-us">Connect With Us</a>
+                            <a href="index.php#connect-us">Connect With Us</a>
                         </li>
                         <li>
                             <a href="#" class="btn-sign-in">Sign in</a>
@@ -65,7 +65,7 @@
             </div>
         </nav>
         <div class="search-bar">
-            <form id="search-form" method="get" action="results.html">
+            <form id="search-form" method="get" action="results.php">
                 <div class="search-box">
                     <i class="glyphicon glyphicon-search"></i>
                     <input name="search-input" type="text" placeholder="Search">
@@ -86,18 +86,18 @@
     </header>
     <main id="results">
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="active">Search results</li>
         </ol>
         <section>
-            <h2><b>Search Results </b>(found <span id="num-of-results">3</span> results)</h2>
+            <h2><b>Search Results </b>(found <span id="num-of-results"><?php echo $result->num_rows ?></span> results)</h2>
         </section>
         <div class="result">
             <?php
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<div class="media bottom-border">';
                     echo '<div class="media-left">';
-                    echo '<img class="media-object" src="../includes/images/Pierre.jpg" alt="Pierre">';
+                    echo '<img class="media-object" src="'.$row[avatar].'" alt="Pierre">';
                     echo '</div>';
                     echo '<div class="media-body">';
                     echo '<h4 class="media-heading">'.$row[first_name].'</h4>';
@@ -116,7 +116,7 @@
                     echo '</p>';
                     echo '</div>';
                     echo '<div class="media-right">';
-                    echo '<a class="default-btn" href="details.html">View connection</a>';
+                    echo '<a class="default-btn" href="details.php">View connection</a>';
                     echo '</div>';
                     echo '</div>';
                 }
