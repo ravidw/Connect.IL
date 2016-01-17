@@ -48,6 +48,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <img id="user-avatar-mobile" src="<?php echo $user[avatar] ?>">
                     <a id="home" class="logo" href="index.php"></a>
                 </div>
 
@@ -62,12 +63,6 @@
                         <li>
                             <img id="user-avatar" src="<?php echo $user[avatar] ?>">
                         </li>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
                     </ul>
                 </div>
             </div>
@@ -76,7 +71,7 @@
             <form id="search-form" method="get" action="results.php">
                 <div class="search-box">
                     <i class="glyphicon glyphicon-search"></i>
-                    <input name="search-input" type="text" placeholder="Search">
+                    <input name="search-input" type="text" placeholder="Search more connections">
                 </div>
                 <div class="input-daterange" id="search-range">
                     <input id="from-date" class="range" name="from-date" type="text" placeholder="From date">
@@ -92,50 +87,51 @@
             </form>
         </div>
     </header>
-    <main id="results">
-        <ol class="breadcrumb">
-            <li><a href="index.php">Home</a></li>
-            <li class="active">Search results</li>
-        </ol>
+    <main id="user-home">
         <section>
-            <h2><b>Search Results </b>(found <span id="num-of-results"><?php echo $result->num_rows ?></span> results)</h2>
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="#">Home</a></li>
+              <li role="presentation"><a href="#">Profile</a></li>
+              <li role="presentation"><a href="#">Messages</a></li>
+            </ul>
+            <h2 class="profile-header"><b>Home</b></h2>
         </section>
-        <div class="result">
-            <?php
-                while($row = mysqli_fetch_assoc($result)){
-                    echo '<div class="media bottom-border">';
-                    echo '<div class="media-left">';
-                    echo '<img class="media-object" src="'.$row[avatar].'" alt="Pierre">';
-                    echo '</div>';
-                    echo '<div class="media-body">';
-                    echo '<h4 class="media-heading">'.$row[first_name].'</h4>';
-                    echo '<select class="readonly-rate-bar">';
-                    echo '<option value="1">1</option>';
-                    echo '<option value="2">2</option>';
-                    echo '<option value="3">3</option>';
-                    echo '<option value="4">4</option>';
-                    echo '<option value="5" selected>5</option>';
-                    echo '</select>';
-                    echo '<p>';
-
-                    $from = substr($row[from], 0, 10);
-                    $to = substr($row[to], 0, 10);
-
-                    echo '<b>When: </b><span class="when-desc">'.$from.' - '.$to.'</span><br>';
-                    echo '<b>Where: </b><span class="where-desc">'.$row[location].'</span><br>';
-                    echo '<b>Willing to offer: </b><span class="offer-desc">'.$row[title].'</span><br>';
-                    echo '<b>Willing to receive: </b><span class="receive-desc">'.$row[looking_for].'</span><br>';
-                    echo '</p>';
-                    echo '</div>';
-                    echo '<div class="media-right">';
-                    echo '<a class="default-btn" href="details.php?ID='.$row[ID].'&offer_num='.$row[offer_num].'">View connection</a>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            ?>
-            <?php mysqli_free_result($result); ?>
+        <section class="to-left">
+            <h3>Connection Requests (1)</h3>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="includes/images/orit.jpeg" alt="Orit">
+                </div>
+                <div class="media-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
+                        vulputate eu pharetra nec, mattis ac neque.
+                    </p>
+                </div>
+                <div class="media-right">
+                    <i class="fa fa-reply reply-connection"></i>
+                </div>
+            </div>
+        </section>
+        <section class="to-left">
+            <h3>Recent Connections</h3>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="includes/images/billie-jean.jpeg" alt="billie">
+                </div>
+                <div class="media-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
+                        vulputate eu pharetra nec, mattis ac neque.
+                    </p>
+                </div>
+                <div class="media-right">
+                    <i class="fa fa-reply reply-connection"></i>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
+    <footer class="clear">
         <nav class="bottom-nav">
             <ul>
                 <li>

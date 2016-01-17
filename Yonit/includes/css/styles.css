@@ -57,6 +57,8 @@ h4 {font-weight: bold; margin: 30px 0 15px;}
 #loginModal .modal-footer input{width: 100%; margin-bottom: 10px;}
 #loginModal .modal-footer{text-align: left;}
 
+#user-avatar-mobile{display: none;}
+
 /*Navigation*/
 #home{padding: 0;}
 nav ul{list-style: none;}
@@ -143,10 +145,10 @@ main{padding: 0 15%;min-height:calc(100% - 209px);}
 }
 
 /*Search results*/
-#results{padding-top:78px; min-height: calc(100% - 185px);}
+#results, #user-home{padding-top:78px; min-height: calc(100% - 185px);}
 .media-object{height: 138px; width: 133px;}
 .media-body p{font-size: 14px;}
-.media-right{
+#results .media-right{
     width: 15%;
     min-width: 160px;
     vertical-align:bottom;
@@ -228,30 +230,40 @@ footer{background-color: #A0A0A0;}
 
 /*Media*/
 @media (max-width: 768px){
+    main{padding: 0 20px;}
     nav li {display: block;}
     nav ul {background: rgba(160, 160, 160, 0.95);}
     .top-nav {background-color: rgba(160, 160, 160, 0.95); z-index:10;}
     .top-nav a:not(#home){border: none; font-weight: 600;}
     .navbar-header{text-align: center;}
     nav a, nav a:focus{padding: 0 20px 0 0;}
+    .logo{width: 100px !important;}
 
-    .search-bar{height: 158px !important;}
+    .search-bar{height: 158px !important; padding: 0 20px !important;}
     .search-box input{width: 100% !important;}
     .input-daterange input{width: 50% !important;}
     .search-bar select{width: calc(50% - 50px) !important;}
-    #results{padding-top: 159px;}
+    #results, #user-home{padding-top: 159px !important;}
 
     #tag-line{width: 100%; margin: 0;}
     #main-image{height: 310px; background-size: 100% 310px;}
 
-    .media-left{float:left;}
-    .media-body{clear: both; width: 100%; display: block !important;}
-    .media-right{float:right;}
+    #results .media-left{float:left;}
+    #results .media-body{clear: both; width: 100%; display: block !important;}
+    #results .media-right{float:right;}
 
     .div-how-works img{display: none;}
     .explanation{float: none; width: 65%;}
 
     .btn-sign-in{padding: 5px 55px !important; margin-left: 0 !important;}
+
+    #user-home .media{width: 320px !important;}
+    #user-home .media-body p{font-size: 12px !important;}
+
+    .profile-header{display: none !important;}
+    .nav-tabs{display: block !important;}
+    #user-avatar{display: none;}
+    #user-avatar-mobile{display: inline-block; float: left; margin-left: 20px !important;}
 }
 
 @media (max-width: 825px){
@@ -272,7 +284,7 @@ footer{background-color: #A0A0A0;}
     .search-box input{width: calc(100% - 200px);}
     .input-daterange input{width: 100px;}
     .search-bar select{width: calc(50% - 50px);}
-    #results{padding-top: 118px;}
+    #results, #user-home{padding-top: 118px;}
 }
 
 @media (max-width: 1335px){
@@ -355,10 +367,17 @@ table tbody tr:hover {
   background-color: #ccc;
 }
 
-#user-avatar{
+#user-avatar, #user-avatar-mobile{
     height: 46px;
     width: 46px;
     border: 2px solid #e3e3e3;
     margin-left: 10px;
     cursor: pointer;
 }
+
+#user-home .media{background-color: #e3e3e3; width: 450px; padding: 7px !important; cursor: pointer;}
+#user-home .media-object{width: 100px !important; height: 100px !important;}
+
+.to-left{float: left; margin: 0 100px 20px 0;}
+
+.nav-tabs{ display: none;}
