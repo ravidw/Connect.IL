@@ -1,0 +1,28 @@
+﻿{
+    "Suggestions": [
+        {
+            "title": "Hotel in Berlin",
+            "image": "includes/images/hotel-medium.jpg",
+            "href": "http://www.google.com",
+            "stars": 5
+        },
+        {
+            "title": "Hotel in Ney-York",
+            "image": "includes/images/hotel2-medium.jpg",
+            "href": "http://www.microsoft.com",
+            "stars": 5
+        },
+        {
+            "title": "Hotel in Prague",
+            "image": "includes/images/hotel3-medium.jpg",
+            "href": "http://www.apple.com",
+            "stars": 5
+        },
+        {
+            "title": "Restaurant in Belgium",
+            "image": "includes/images/Restaurant-medium.jpg",
+            "href": "http://www.yahoo.com",
+            "stars": 4
+        }
+    ]
+}
