@@ -68,7 +68,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="home" class="logo" href="#"></a>
+                    <a id="home" class="logo" href="index.php"></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="nav-collapse">

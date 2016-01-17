@@ -250,6 +250,8 @@ footer{background-color: #A0A0A0;}
 
     .div-how-works img{display: none;}
     .explanation{float: none; width: 65%;}
+
+    .btn-sign-in{padding: 5px 55px !important; margin-left: 0 !important;}
 }
 
 @media (max-width: 825px){
@@ -351,4 +353,12 @@ table tbody tr.alt {
 }
 table tbody tr:hover {
   background-color: #ccc;
+}
+
+#user-avatar{
+    height: 46px;
+    width: 46px;
+    border: 2px solid #e3e3e3;
+    margin-left: 10px;
+    cursor: pointer;
 }
