@@ -394,11 +394,10 @@ table tbody tr:hover {
     nav a, nav a:focus{padding: 0 20px 0 0;}
     .logo{width: 100px !important; margin-left: 5px;/*-46px;*/}
 
-    .search-bar{padding: 0 20px !important;}
+    .search-bar{height: 78px; padding: 0 20px !important;}
     .search-box input{width: 100% !important;}
     .input-daterange input{width: 50% !important;}
     .search-bar select{width: calc(50% - 50px) !important;}
-    #results, #user-home{padding-top: 159px !important;}
 
     #tag-line{width: 100%; margin: 0;}
     #main-image{height: 310px; background-size: 100% 310px;}
@@ -422,7 +421,7 @@ table tbody tr:hover {
 
     .left-details, .right-details {width: 100%; margin: 0;}
 
-    #search-form .input-daterange, #search-form select, #search-form input{ display:none; }
+    #search-form .input-daterange, #search-form select, #search-form .btn-search{ display:none; }
 }
 
 @media (max-width: 500px) {
