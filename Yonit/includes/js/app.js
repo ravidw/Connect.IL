@@ -86,7 +86,7 @@ $(document).ready(function(){
 
     var imgNum = 1;
     window.setInterval(function(){
-        imgNum == 4 ? imgNum = 1: imgNum++;
+        imgNum == 2 ? imgNum = 1: imgNum++;
 
         $('#main-image').css('background-image', 'url("includes/images/back' + imgNum + '.jpg")')
     }, 5000);
