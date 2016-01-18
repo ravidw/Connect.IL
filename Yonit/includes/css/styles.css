@@ -297,7 +297,7 @@ table tbody tr:hover {
   background-color: #ccc;
 }
 
-#user-avatar, #user-avatar-mobile{
+#avatar-dropdown, #user-avatar-mobile{
     height: 46px;
     width: 46px;
     border: 2px solid #e3e3e3;
@@ -313,7 +313,9 @@ table tbody tr:hover {
 #user-home .fa-plus{cursor: pointer;}
 #user-home .fa-plus:hover{color: #31A199;}
 
-.nav-tabs{ display: none;}
+.avatar-dropdown{line-height: 46px;}
+
+#request-page .fa-check{color: #31A199;}
 
 /*Media*/
 @media (max-width: 768px){
@@ -348,7 +350,6 @@ table tbody tr:hover {
     #user-home .media{width:320px;}
 
     .profile-header{display: none !important;}
-    .nav-tabs{display: block !important;}
     #user-avatar{display: none;}
     #user-avatar-mobile{display: inline-block; float: left; margin-left: 20px !important;}
 }
