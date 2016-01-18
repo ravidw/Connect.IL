@@ -90,4 +90,8 @@ $(document).ready(function(){
 
         $('#main-image').css('background-image', 'url("includes/images/back' + imgNum + '.jpg")')
     }, 5000);
+
+    $('#pending-requests').click(function(){
+
+    });
 });

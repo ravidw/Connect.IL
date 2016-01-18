@@ -91,8 +91,53 @@
         <section>
             <h2><b>Home</b></h2>
         </section>
-        <section class="to-left">
-            <h3>Connection Requests (1)</h3>
+        <section id="my-offers" class="to-left">
+            <h3>My offers&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></h3>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="../includes/images/hotel2-small.jpg" alt="billie">
+                </div>
+                <div class="media-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
+                        vulputate eu pharetra nec, mattis ac neque.
+                    </p>
+                </div>
+                <div class="media-right">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+            </div>
+        </section>
+        <section id="pending-requests" class="to-left">
+            <h3>Pending Connection Requests (1)</h3>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="../includes/images/orit.jpeg" alt="Orit">
+                </div>
+                <div class="media-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
+                        vulputate eu pharetra nec, mattis ac neque.
+                    </p>
+                </div>
+                <div class="media-right">
+                    <i class="fa fa-reply reply-connection"></i>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="../includes/images/orit.jpeg" alt="Orit">
+                </div>
+                <div class="media-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
+                        vulputate eu pharetra nec, mattis ac neque.
+                    </p>
+                </div>
+                <div class="media-right">
+                    <i class="fa fa-reply reply-connection"></i>
+                </div>
+            </div>
             <div class="media">
                 <div class="media-left">
                     <img class="media-object" src="../includes/images/orit.jpeg" alt="Orit">
@@ -108,11 +153,11 @@
                 </div>
             </div>
         </section>
-        <section class="to-left">
-            <h3>Recent Connections</h3>
+        <section id="approved-requests" class="to-left">
+            <h3>Approved Connection Requests</h3>
             <div class="media">
                 <div class="media-left">
-                    <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="billie">
+                    <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Orit">
                 </div>
                 <div class="media-body">
                     <p>
@@ -121,7 +166,21 @@
                     </p>
                 </div>
                 <div class="media-right">
-                    <i class="fa fa-reply reply-connection"></i>
+                    <i class="fa fa-calendar"></i>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Orit">
+                </div>
+                <div class="media-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
+                        vulputate eu pharetra nec, mattis ac neque.
+                    </p>
+                </div>
+                <div class="media-right">
+                    <i class="fa fa-calendar"></i>
                 </div>
             </div>
         </section>
