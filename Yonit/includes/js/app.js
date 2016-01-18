@@ -95,12 +95,23 @@ $(document).ready(function(){
         window.location.href = "../account/request.html";
     });
 
-    $('#search-form .search-box').focus(function(){
-        var searchBar = $(this).parent().parent();
+    $('#search-form .search-box input').focus(function(){
+        var searchBar = $(this).parent().parent().parent();
         if(searchBar.width() <= 768){
-            $('#search-form .input-daterange, #search-form select, #search-form input').show();
+            $('#search-form .input-daterange, #search-form select, #search-form .btn-search').show();
 
             searchBar.animate({height: '+=80'});
+            $('#results, #user-home, #request-page, #offer-page').animate({paddingTop: '+=80'});
+        }
+    });
+
+    $('#search-form .search-box input').blur(function(){
+        var searchBar = $(this).parent().parent().parent();
+        if(searchBar.width() <= 768){
+            $('#search-form .input-daterange, #search-form select, #search-form .btn-search').hide();
+
+            searchBar.animate({height: '-=80'});
+            $('#results, #user-home, #request-page, #offer-page').animate({paddingTop: '-=80'});
         }
     });
 });
