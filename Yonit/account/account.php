@@ -1,3 +1,23 @@
+<?php
+    $dbhost = "182.50.131.14";
+    $dbuser = "mtastudDB1";
+    $dbpass = "mtastudDB1!";
+    $dbname = "mtastudDB1";
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    if(mysqli_connect_errno()) {
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")");
+    }
+
+    $query = "SELECT * FROM tbl16_users_225 WHERE email = 'pierre@pierre.com'";
+    $result = mysqli_query($connection, $query);
+    if(!$result){
+        die("DB query failed.");
+    }
+
+    $user = mysqli_fetch_assoc($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +48,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img id="user-avatar-mobile" src="../includes/images/Pierre.jpg">
+                    <img id="user-avatar-mobile" src="../<?php echo $user[avatar] ?>">
                     <a id="home" class="logo" href="../index.html"></a>
                 </div>
 
@@ -41,7 +61,7 @@
                             <a href="../index.html#connect-us">Connect With Us</a>
                         </li>
                         <li>
-                            <img id="user-avatar" src="../includes/images/Pierre.jpg">
+                            <img id="user-avatar" src="../<?php echo $user[avatar] ?>">
                         </li>
                     </ul>
                 </div>
