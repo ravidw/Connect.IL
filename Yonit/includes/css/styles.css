@@ -172,7 +172,7 @@ main{
 }
 
 /*Search results*/
-#results, #user-home{padding-top:78px; min-height: calc(100% - 185px);}
+#results, #user-home, #request-page, #offer-page{padding-top:78px; min-height: calc(100% - 185px);}
 .media-object{height: 138px; width: 133px;}
 .media-body p{font-size: 14px;}
 #results .media-right{
@@ -324,7 +324,7 @@ table tbody tr:hover {
   background-color: #ccc;
 }
 
-#avatar-dropdown, #user-avatar-mobile{
+#user-avatar, #user-avatar-mobile{
     height: 46px;
     width: 46px;
     border: 2px solid #e3e3e3;
@@ -342,7 +342,9 @@ table tbody tr:hover {
 
 .avatar-dropdown{line-height: 46px;}
 
-#request-page .fa-check{color: #31A199;}
+#request-page .request-details .fa-check{color: #31A199;}
+
+#request-page .request-details{font-size: 18px; line-height: 20px;}
 
 /*Media*/
 @media (max-width: 1335px){
@@ -392,7 +394,7 @@ table tbody tr:hover {
     nav a, nav a:focus{padding: 0 20px 0 0;}
     .logo{width: 100px !important; margin-left: 5px;/*-46px;*/}
 
-    .search-bar{height: 158px !important; padding: 0 20px !important;}
+    .search-bar{padding: 0 20px !important;}
     .search-box input{width: 100% !important;}
     .input-daterange input{width: 50% !important;}
     .search-bar select{width: calc(50% - 50px) !important;}
@@ -419,4 +421,6 @@ table tbody tr:hover {
     #user-avatar-mobile{display: inline-block; float: left; margin-left: 20px !important;}
 
     .left-details, .right-details {width: 100%; margin: 0;}
+
+    #search-form .input-daterange, #search-form select, #search-form input{ display:none; }
 }

@@ -94,4 +94,13 @@ $(document).ready(function(){
     $('#pending-requests').click(function(){
         window.location.href = "../account/request.html";
     });
+
+    $('#search-form .search-box').focus(function(){
+        var searchBar = $(this).parent().parent();
+        if(searchBar.width() <= 768){
+            $('#search-form .input-daterange, #search-form select, #search-form input').show();
+
+            searchBar.animate({height: '+=80'});
+        }
+    });
 });
