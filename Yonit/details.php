@@ -68,20 +68,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="home" class="logo" href="index.php"></a>
+                    <a id="home" class="logo" href="index.html"></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="nav-collapse">
                     <ul>
                         <li class="nav-link">
-                            <a href="index.php#suggested">Suggested Connections</a>
+                            <a href="index.html#suggested">Suggested Connections</a>
                         </li>
                         <li class="nav-link">
-                            <a href="index.php#connect-us">Connect With Us</a>
+                            <a href="index.html#connect-us">Connect With Us</a>
                         </li>
                         <li>
                             <a href="#" class="btn-sign-in" data-toggle="modal" data-target="#loginModal">Login</a>
-                            <?php include 'loginModal.html' ?>
+                            <?php include 'templates/loginModal.html' ?>
                         </li>
                     </ul>
                 </div>
@@ -90,7 +90,7 @@
     </header>
     <main id="details">
         <ol class="breadcrumb">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#" onclick="window.history.back()">Search results</a></li>
             <li class="active"><?php echo $row[first_name].' '.$row[last_name] ?></li>
         </ol>
