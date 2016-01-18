@@ -135,6 +135,16 @@ div.make-report {
 }
 .offer-controlers a {
   margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  line-height: inherit;
+}
+
+#admin .media-right{
+    width: 15%;
+    min-width: 160px;
+    vertical-align:bottom;
+    text-align: right;
 }
 
 @media (max-width: 990px){
@@ -158,4 +168,7 @@ div.make-report {
   .main-right {
     width: 100%;
   }
+  #admin .media-left{float:left;}
+  #admin .media-body{clear: both; width: 100%; display: block !important;}
+  #admin .media-right{float:right;}
 }
