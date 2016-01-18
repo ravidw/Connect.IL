@@ -96,8 +96,8 @@ $(document).ready(function(){
     });
 
     $('#search-form .search-box input').focus(function(){
-        var searchBar = $(this).parent().parent().parent();
-        if(searchBar.width() <= 768){
+        var searchBar = $('.search-bar');
+        if($('main').width() <= 768){
             $('#search-form .input-daterange, #search-form select, #search-form .btn-search').show();
 
             searchBar.animate({height: '+=80'});
@@ -106,8 +106,8 @@ $(document).ready(function(){
     });
 
     $('#search-form .search-box input').blur(function(){
-        var searchBar = $(this).parent().parent().parent();
-        if(searchBar.width() <= 768){
+        var searchBar = $('.search-bar');
+        if($('main').width() <= 768){
             $('#search-form .input-daterange, #search-form select, #search-form .btn-search').hide();
 
             searchBar.animate({height: '-=80'});
