@@ -158,8 +158,8 @@ main{
     margin: 0 auto;
     position: relative;
 }
-.div-how-works .arrow-left{margin-top: 20px; margin-right: 10px;}
-.div-how-works .arrow-right{margin-bottom: -30px; margin-left: 10px;}
+.div-how-works .arrow-left{margin-top: 20px; margin-right: 10px; width: 212px;}
+.div-how-works .arrow-right{margin-bottom: -30px; margin-left: 10px; width: 212px;}
 .globe-israel, .arrow-right{float: left;}
 .globe-world, .arrow-left{float: right;}
 .globe-israel, .arrow-right, .globe-world{margin-top: 50px;}
@@ -167,7 +167,7 @@ main{
     border: 10px double #8e98a5;
     float:left;
     height: 200px;
-    width: 250px;
+    width: 298px;
     padding: 15px 5px;
 }
 
@@ -345,6 +345,43 @@ table tbody tr:hover {
 #request-page .fa-check{color: #31A199;}
 
 /*Media*/
+@media (max-width: 1335px){
+    .top-nav ul{font-size: 14px;}
+}
+
+@media (max-width: 1175px){
+    .top-nav {padding: 0;}
+    .search-bar{height: 118px;}
+    .search-box input{width: calc(100% - 200px);}
+    .input-daterange input{width: 100px;}
+    .search-bar select{width: calc(50% - 50px);}
+    #results, #user-home{padding-top: 118px;}
+
+    .div-how-works{ width: 769px;}
+    .div-how-works .arrow-left{width: 105px; margin-top: 50px;}
+    .div-how-works .arrow-right{width: 105px;}
+    .div-how-works .globe-israel{margin-right: 20px; width: 100px;}
+    .div-how-works .globe-world{margin-left: 20px; width: 100px;}
+}
+
+@media (max-width: 825px){
+    /*.top-nav {height: 50px;}*/
+    .top-nav ul{line-height: 50px;}
+    .logo{
+        height: 50px;
+        position: absolute;
+        width: 175px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .div-how-works{ width: 710px;}
+    .div-how-works .arrow-left{width: 90px; margin-top: 50px;}
+    .div-how-works .arrow-right{width: 90px;}
+    .div-how-works .globe-israel{margin-right: 15px; width: 90px;}
+    .div-how-works .globe-world{margin-left: 15px; width: 90px;}
+}
+
 @media (max-width: 768px){
     /*main{padding: 0 20px;}*/
     nav li {display: block;}
@@ -368,8 +405,9 @@ table tbody tr:hover {
     #results .media-body{clear: both; width: 100%; display: block !important;}
     #results .media-right{float:right;}
 
+    .div-how-works{ width: 100%; height: inherit;}
     .div-how-works img{display: none;}
-    .explanation{float: none; width: 65%;}
+    .explanation{float: none; width: 100%; border: none;}
 
     .btn-sign-in{padding: 5px 55px !important; margin-left: 0 !important;}
 
@@ -381,36 +419,4 @@ table tbody tr:hover {
     #user-avatar-mobile{display: inline-block; float: left; margin-left: 20px !important;}
 
     .left-details, .right-details {width: 100%; margin: 0;}
-}
-
-@media (max-width: 825px){
-    /*.top-nav {height: 50px;}*/
-    .top-nav ul{line-height: 50px;}
-    .logo{
-        height: 50px;
-        position: absolute;
-        width: 175px;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-}
-
-@media (max-width: 1175px){
-    .top-nav {padding: 0;}
-    .search-bar{height: 118px;}
-    .search-box input{width: calc(100% - 200px);}
-    .input-daterange input{width: 100px;}
-    .search-bar select{width: calc(50% - 50px);}
-    #results, #user-home{padding-top: 118px;}
-}
-
-@media (max-width: 1335px){
-    .top-nav ul{font-size: 14px;}
-}
-
-@media (max-width: 1450px){
-    .div-how-works{ width: 546px;}
-    .div-how-works .arrow-left, .div-how-works .arrow-right{display: none;}
-    .div-how-works .globe-israel{margin-right: 20px;}
-    .div-how-works .globe-world{margin-left: 20px;}
 }

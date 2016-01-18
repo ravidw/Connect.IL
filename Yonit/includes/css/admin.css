@@ -36,7 +36,7 @@ header {
 
 .quick-info-box-wrapper {
   width: 33%;
-  padding: 0 20px;
+  padding: 0 10px;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 50px;
@@ -83,8 +83,8 @@ div.make-report {
 }
 .make-report-line {
     width: 100%;
-    margin-bottom: 10px;
-    display: inline-block;
+    /*margin-bottom: 10px;
+    display: inline-block;*/
 }
 .make-report-line-last {
     width: 100%;
@@ -135,4 +135,27 @@ div.make-report {
 }
 .offer-controlers a {
   margin-right: 10px;
+}
+
+@media (max-width: 990px){
+  .quick-info-box-wrapper {
+      width: 49%;
+  }
+  .quick-info-box-wrapper-first, .quick-info-box-wrapper-last {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px){
+  .quick-info-box-wrapper {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 20px;
+  }
+  .main-left {
+    width: 100%;
+  }
+  .main-right {
+    width: 100%;
+  }
 }

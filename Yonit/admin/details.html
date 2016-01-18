@@ -25,98 +25,103 @@
 </head>
 <body>
   <header>
-    <nav class="top-nav">
-      <a id="home" class="logo" href="index.html"></a>
-      <ul>
-        <li class="nav-link">
-          <a href="index.html#suggested">Suggested Connections</a>
-        </li>
-        <li class="nav-link">
-          <a href="index.html#connect-us">Connect With Us</a>
-        </li>
-        <li>
-          <a href="#" class="btn-sign-in">Sign in</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-default top-nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="home" class="logo" href="index.html"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul>
+            <li class="nav-link">
+              <a href="index.html#suggested">Suggested Connections</a>
+            </li>
+            <li class="nav-link">
+              <a href="index.html#connect-us">Connect With Us</a>
+            </li>
+            <li>
+              <a href="#" class="btn-sign-in" data-toggle="modal" data-target="#loginModal">Login</a>
+              <?php include 'templates/loginModal.html' ?>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
   <main id="details">
     <ol class="breadcrumb">
       <li><a href="index.html">Home</a></li>
       <li><a href="#" onclick="window.history.back()">Search results</a></li>
-      <li class="active">Pierre Curie</li>
+      <li class="active"><?php echo $row[first_name].' '.$row[last_name] ?></li>
     </ol>
     <h2>
-      Review Pierre Curie Offer
+      Connect <?php echo $row[first_name].' '.$row[last_name] ?>
+
+      <select class="readonly-rate-bar">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
     </h2>
-    <section class="offer-controlers">
-      <a class="default-btn" href="#">
-        <span class="glyphicon glyphicon-ok"></span> Approve this offer
-      </a>
-      <a class="default-btn" href="#">
-        <span class="glyphicon glyphicon-envelope"></span> Message the host
-      </a>
-      <a class="default-btn" href="#">
-        <span class="glyphicon glyphicon-pencil"></span> Edit host details
-      </a>
-      <a class="default-btn" href="#">
-        <span class="glyphicon glyphicon-remove"></span> Delete this offer
-      </a>
-    </section>
     <section>
       <div class="host-image">
-        <img class="media-object" src="../includes/images/Pierre.jpg" alt="Pierre Curie">
-        <br>
-        <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Image</a>
+        <img class="media-object" src="<?php echo $row[avatar] ?>" alt="Pierre Curie">
       </div>
       <div class="host-text">
         <p>
-          <b>What do I offer?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
-          <b>When?</b> All year.<br>
-          <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
-          <b>What do I want to receive in return?</b> Open for suggestions.<br>
-          <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Offer Info</a>
+          <b>What in this offer? </b><?php echo $row[title] ?><br>
+          <b>When? </b><?php echo $row[from]. ' - '.$row[to] ?><br>
+          <b>Where? </b><?php echo $row[location] ?><br>
+          <b>What do I want to receive in return? </b><?php echo $row[looking_for] ?><br>
         </p>
         <p>
-          <b>More thing i'd like you to know about my offer:</b>
+          <b>Few more thing's i'd like you to know about my offer:</b>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec,
           mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
-          <br>
-          <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Text</a>
         </p>
         <p>
           <b>A little bit about myself:</b><br>
-          My name is Pier, I am a hotel owner. I love Israelis and want them to visit my hotel.
-          In my free time i'm playing the piano and taking pictures of the beautiful birds of France.
-          <br>
-          <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Text</a>
+          <?php echo $row[description] ?>
         </p>
+      </div>
+      <div class="clear"></div>
+      <div class="connect-button">
+        <a class="default-btn get-connected" href="#">Connect With Me!</a>
       </div>
     </section>
     <section>
       <div class="left-details">
         <div id="gallery">
-          <a href="../includes/images/hotel-big.jpg"><img src="../includes/images/hotel-big.jpg" alt="The magnificent view from the hotel"></a>
-          <a href="../includes/images/hotel2-big.jpg"><img src="../includes/images/hotel2-big.jpg" alt="One of many luxurious rooms"></a>
-          <a href="../includes/images/hotel3-big.jpg"><img src="../includes/images/hotel3-big.jpg" alt="Warm welcoming"></a>
+          <?php
+          if(mysqli_fetch_assoc($result2)->lengths == 0){
+          echo '<a href="includes/images/image-ph"><img src="includes/images/image-ph" alt="No images :("></a>';
+          }
+          while($image = mysqli_fetch_assoc($result2)){
+          echo '<a href="'.$image[source].'"><img src="'.$image[source].'" alt="'.$image[alt].'"></a>';
+          }
+          ?>
         </div>
-        <br>
-        <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Images</a>
       </div>
       <div class="right-details">
         <div id="googleMap"></div>
-        <br>
-        <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Address</a>
       </div>
     </section>
     <section>
       <div class="left-details">
         <div id="gallery">
           <div class="reviews">
-            <h4>Top Comments about Pierre Curie:</h4>
+            <h4>Top Comments about <?php echo $row[first_name].' '.$row[last_name] ?>:</h4>
             <div class="media media2">
               <div class="media-left">
-                <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Billie Jean">
+                <img class="media-object" src="includes/images/billie-jean.jpeg" alt="Billie Jean">
               </div>
               <div class="media-body">
                 <h4 class="media-heading">Billie Jean</h4>
@@ -132,13 +137,10 @@
                   pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
                 </p>
               </div>
-              <br>
-              <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp;&nbsp;
-              <a href="#"><span class="glyphicon glyphicon-remove"></span> Delete</a>
             </div>
             <div class="media media2">
               <div class="media-left">
-                <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Billie Jean">
+                <img class="media-object" src="includes/images/billie-jean.jpeg" alt="Billie Jean">
               </div>
               <div class="media-body">
                 <h4 class="media-heading">Billie Jean</h4>
@@ -154,105 +156,58 @@
                   pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
                 </p>
               </div>
-              <br>
-              <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp;&nbsp;
-              <a href="#"><span class="glyphicon glyphicon-remove"></span> Delete</a>
             </div>
-            <div class="media media2">
-              <div class="media-left">
-                <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Billie Jean">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Billie Jean</h4>
-                <select class="readonly-rate-bar">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5" selected>5</option>
-                </select>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu
-                  pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
-                </p>
-              </div>
-              <br>
-              <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp;&nbsp;
-              <a href="#"><span class="glyphicon glyphicon-remove"></span> Delete</a>
-            </div>
-            <div class="media media2">
-              <div class="media-left">
-                <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Billie Jean">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Billie Jean</h4>
-                <select class="readonly-rate-bar">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5" selected>5</option>
-                </select>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu
-                  pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.
-                </p>
-              </div>
-              <br>
-              <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp;&nbsp;
-              <a href="#"><span class="glyphicon glyphicon-remove"></span> Delete</a>
-            </div>
+            <a class="default-btn more-comments" href="#">More comments</a>
           </div>
         </div>
       </div>
       <div class="right-details">
         <div class="reviews">
-          <h4>More offers from Pierre Curie:</h4>
+          <h4>More offers from <?php echo $row[first_name].' '.$row[last_name] ?>:</h4>
           <div class="media media3 media3-first">
             <div class="media-left">
-              <a href="#"><img src="../includes/images/hotel2-small.jpg" alt="Offer Title"></a>
+              <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
             </div>
             <div class="media-body">
               <p>
                 <b>What?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
                 <b>When?</b> All year.<br>
                 <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
+                <a class="see-this-offer">See this offer</a>
               </p>
             </div>
-            <br>
-            <a href="#"><span class="glyphicon glyphicon-share-alt"></span> Review</a>&nbsp;&nbsp;
           </div>
           <div class="media media3">
             <div class="media-left">
-              <a href="#"><img src="../includes/images/hotel2-small.jpg" alt="Offer Title"></a>
+              <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
             </div>
             <div class="media-body">
               <p>
                 <b>What?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
                 <b>When?</b> All year.<br>
                 <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
+                <a class="see-this-offer">See this offer</a>
               </p>
             </div>
-            <br>
-            <a href="#"><span class="glyphicon glyphicon-share-alt"></span> Review</a>&nbsp;&nbsp;
           </div>
           <div class="media media3">
             <div class="media-left">
-              <a href="#"><img src="../includes/images/hotel2-small.jpg" alt="Offer Title"></a>
+              <a href="#"><img src="includes/images/hotel2-small.jpg" alt="Offer Title"></a>
             </div>
             <div class="media-body">
               <p>
                 <b>What?</b> 2 nights at my beautiful hotel in the center of the city, for free.<br>
                 <b>When?</b> All year.<br>
                 <b>Where?</b> Paris, France, 20 Avenue Leon Bourgeois.<br>
+                <a class="see-this-offer">See this offer</a>
               </p>
             </div>
-            <br>
-            <a href="#"><span class="glyphicon glyphicon-share-alt"></span> Review</a>&nbsp;&nbsp;
           </div>
+          <a class="default-btn more-comments" href="#">View all my offers</a>
         </div>
       </div>
     </section>
+    <?php mysqli_free_result($result); ?>
   </main>
   <footer class="clear">
     <nav class="bottom-nav">
