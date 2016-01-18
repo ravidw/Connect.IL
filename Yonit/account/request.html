@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img id="user-avatar-mobile" src="../<?php echo $user[avatar] ?>">
+                <img id="user-avatar-mobile" src="../includes/images/Pierre.jpg">
                 <a id="home" class="logo" href="../index.html"></a>
             </div>
 
@@ -41,128 +41,38 @@
                         <a href="../index.html#connect-us">Connect With Us</a>
                     </li>
                     <li>
-                        <img id="user-avatar" src="../<?php echo $user[avatar] ?>">
+                        <div class="dropdown avatar-dropdown">
+                            <button id="avatar-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="user-avatar" src="../includes/images/Pierre.jpg">
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="avatar-dropdown">
+                                ...
+                            </ul>
+                        </div>
+
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="search-bar">
-        <form id="search-form" method="get" action="#">
-            <div class="search-box">
-                <i class="glyphicon glyphicon-search"></i>
-                <input name="search-input" type="text" placeholder="Search more connections">
-            </div>
-            <div class="input-daterange" id="search-range">
-                <input id="from-date" class="range" name="from-date" type="text" placeholder="From date">
-                <input id="to-date" class="range" name="to-date" type="text" placeholder="To date">
-            </div>
-            <select name="main-category">
-                <option value="rooms">Rooms for lodging</option>
-            </select>
-            <select name="secondary-category">
-                <option value="europe">Europe</option>
-            </select>
-            <input class="btn-search" type="submit" value="Search">
-        </form>
-    </div>
 </header>
-<main id="user-home">
+<main id="request-page">
+    <ol class="breadcrumb">
+        <li><a href="account.php">Home</a></li>
+        <li class="active">Orit's request</li>
+    </ol>
     <section>
-        <h2><b>Home</b></h2>
+        <h2><b>Connection Request Summary </b></h2>
     </section>
-    <section class="to-left">
-        <h3>My offers&nbsp;&nbsp;&nbsp;<i class="fa fa-plus"></i></h3>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="../includes/images/hotel2-small.jpg" alt="billie">
-            </div>
-            <div class="media-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
-                    vulputate eu pharetra nec, mattis ac neque.
-                </p>
-            </div>
-            <div class="media-right">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-        </div>
+    <section>
+        
     </section>
-    <section class="to-left">
-        <h3>Pending Connection Requests (1)</h3>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="../includes/images/orit.jpeg" alt="Orit">
-            </div>
-            <div class="media-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
-                    vulputate eu pharetra nec, mattis ac neque.
-                </p>
-            </div>
-            <div class="media-right">
-                <i class="fa fa-reply reply-connection"></i>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="../includes/images/orit.jpeg" alt="Orit">
-            </div>
-            <div class="media-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
-                    vulputate eu pharetra nec, mattis ac neque.
-                </p>
-            </div>
-            <div class="media-right">
-                <i class="fa fa-reply reply-connection"></i>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="../includes/images/orit.jpeg" alt="Orit">
-            </div>
-            <div class="media-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
-                    vulputate eu pharetra nec, mattis ac neque.
-                </p>
-            </div>
-            <div class="media-right">
-                <i class="fa fa-reply reply-connection"></i>
-            </div>
-        </div>
-    </section>
-    <section class="to-left">
-        <h3>Approved Connection Requests</h3>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Orit">
-            </div>
-            <div class="media-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
-                    vulputate eu pharetra nec, mattis ac neque.
-                </p>
-            </div>
-            <div class="media-right">
-                <i class="fa fa-calendar"></i>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="../includes/images/billie-jean.jpeg" alt="Orit">
-            </div>
-            <div class="media-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,<br>
-                    vulputate eu pharetra nec, mattis ac neque.
-                </p>
-            </div>
-            <div class="media-right">
-                <i class="fa fa-calendar"></i>
-            </div>
-        </div>
+    <section>
+        <p>
+            <b>Request for: </b>2 nights at my beautiful hotel in the center of the city, for free.
+            <b>Desired period: </b>2016-02-03 - 2016-02-05.&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i>
+            <b>Desired period: </b>2016-02-03 - 2016-02-05.&nbsp;&nbsp;&nbsp;<i class="fa fa-check"></i>
+        </p>
     </section>
 </main>
 <footer class="clear">

@@ -92,6 +92,6 @@ $(document).ready(function(){
     }, 5000);
 
     $('#pending-requests').click(function(){
-
+        window.location.href = "../account/request.html";
     });
 });
