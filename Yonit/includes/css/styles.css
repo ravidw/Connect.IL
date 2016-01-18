@@ -433,3 +433,13 @@ table tbody tr:hover {
 
     #search-form .input-daterange, #search-form select, #search-form .btn-search{ display:none; }
 }
+
+@media (max-width: 500px) {
+  .host-image {
+      width: 100%;
+  }
+  .host-text {
+      width: 100%;
+      margin-top: 20px;
+  }
+}
