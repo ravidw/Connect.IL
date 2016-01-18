@@ -108,6 +108,7 @@ nav a:hover{ color: #f2f2f2;}
 .btn-sign-in:hover{border: 1px solid #d1d1d1 !important; color: #d1d1d1;}
 
 /*Search-bar*/
+/*#search-form .input-daterange, #search-form select, #search-form .btn-search{display: inline-block;}*/
 #main-image .search-bar{bottom: 0;}
 .search-bar{
     height: 78px;
@@ -172,7 +173,8 @@ main{
 }
 
 /*Search results*/
-#results, #user-home, #request-page, #offer-page{padding-top:78px; min-height: calc(100% - 185px);}
+#results, #user-home, #offer-page, #request-page{min-height: calc(100% - 185px);}
+#results, #user-home{padding-top:78px; }
 .media-object{height: 138px; width: 133px;}
 .media-body p{font-size: 14px;}
 #results .media-right{
@@ -332,11 +334,18 @@ table tbody tr:hover {
     cursor: pointer;
 }
 
-#user-home .media{background-color: #e3e3e3; width: 377px; padding: 7px !important; cursor: pointer;}
+#user-home .media{
+    background-color: #e3e3e3;
+    width: 377px;
+    padding: 7px !important;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
 #user-home .media:hover .fa{color: #31A199;}
 #user-home .media-object{width: 100px !important; height: 100px !important;}
-.to-left{float: left; margin: 0 100px 20px 0;}
-#user-home section:last-child{margin-right: 0;}
+.to-left{float: left; margin-bottom:20px; width: 100%;}
+#user-home .to-left .media:last-child{margin-right: 0;}
 #user-home .fa-plus{cursor: pointer;}
 #user-home .fa-plus:hover{color: #31A199;}
 
@@ -398,6 +407,7 @@ table tbody tr:hover {
     .search-box input{width: 100% !important;}
     .input-daterange input{width: 50% !important;}
     .search-bar select{width: calc(50% - 50px) !important;}
+    #results, #user-home{padding-top: 78px;}
 
     #tag-line{width: 100%; margin: 0;}
     #main-image{height: 310px; background-size: 100% 310px;}

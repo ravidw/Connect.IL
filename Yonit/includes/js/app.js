@@ -101,7 +101,7 @@ $(document).ready(function(){
             $('#search-form .input-daterange, #search-form select, #search-form .btn-search').show();
 
             searchBar.animate({height: '+=80'});
-            $('#results, #user-home, #request-page, #offer-page').animate({paddingTop: '+=80'});
+            $('#results, #user-home').animate({paddingTop: '+=80'});
         }
     });
 
@@ -111,7 +111,7 @@ $(document).ready(function(){
             $('#search-form .input-daterange, #search-form select, #search-form .btn-search').hide();
 
             searchBar.animate({height: '-=80'});
-            $('#results, #user-home, #request-page, #offer-page').animate({paddingTop: '-=80'});
+            $('#results, #user-home').animate({paddingTop: '-=80'});
         }
     });
 });
